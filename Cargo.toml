@@ -6,5 +6,6 @@ authors = ["ItinoseSan <dhelitus@gmail.com>"]
 [dependencies]
 reqwest = "*"
 clap = "2.31.1"
+serde_json = "1.0"
 
 

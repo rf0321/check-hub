@@ -3,6 +3,7 @@ use std::mem;
 const API_BASE_URL:&str = "https://api.github.com/";
 const GITHUB_USER_NAME:&str = "Your user name";
 const API_TOKEN:&str = "Your token";
+
 pub struct GithubAPI{}
 
 impl GithubAPI{

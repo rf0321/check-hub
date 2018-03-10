@@ -43,44 +43,28 @@ impl Checkhub{
 
         if let Some(arg) = maches.value_of("INFO NAME"){
             if arg == "name"{
-                let url = github.profile();
-                let json = client.get_request_json(url);
-                 json_decoder.name(json);
+               json_decoder.name(json);
             }
             else if arg == "login"{
-                let url = github.profile();
-                let json = client.get_request_json(url);
-                json_decoder.login(json);
+               json_decoder.login(json);
             }
             else if arg == "bio"{
-                let url = github.profile();
-                let json = client.get_request_json(url);
-                json_decoder.bio(json);
+               json_decoder.bio(json);
             }
             else if arg == "gist-count"{
-                let url = github.profile();
-                let json = client.get_request_json(url);
-                json_decoder.gist(json);
+               json_decoder.gist(json);
             }
             else if arg == "follow-count"{
-                let url = github.profile();
-                let json = client.get_request_json(url);
-                json_decoder.follow_count(json);
+               json_decoder.follow_count(json);
             }
             else if arg =="follower-count"{
-                let url = github.profile();
-                let json = client.get_request_json(url);
-                json_decoder.follower_count(json);
+               json_decoder.follower_count(json);
             }
             else if arg == "repository-count"{
-                let url = github.profile();
-                let json = client.get_request_json(url);
-                json_decoder.repository_count(json);
+               json_decoder.repository_count(json);
             }
             else if arg =="location"{
-                let url = github.profile();
-                let json = client.get_request_json(url);
-                json_decoder.location(json);
+               json_decoder.location(json);
             }
            else{
                println!("Undefined args of this tool :{} \nCheck  -h or --help command",arg);

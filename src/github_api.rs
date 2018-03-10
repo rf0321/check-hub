@@ -1,8 +1,8 @@
 use std::mem;
-use std::env;
+
 const API_BASE_URL:&str = "https://api.github.com/";
-const API_TOKEN:&str = "";
-const GITHUB_USER_NAME:&str = "";
+const GITHUB_USER_NAME:&str = "Your user name";
+const API_TOKEN:&str = "Your token";
 pub struct GithubAPI{}
 
 impl GithubAPI{
@@ -32,7 +32,7 @@ impl GithubAPI{
         return self.url_with_param("/followers");
     }
     pub fn stars(&self)->&str{
-        return self.url_with_param("/stars");
+        return self.url_with_param("/starred");
     }
     pub fn repository(&self) ->&str{
         return self.url_with_param("/repos");
@@ -45,17 +45,3 @@ impl GithubAPI{
         }
     }
 }
-
-/*#[derive(Default)]
-pub struct Config{
-    pub username: String,
-    token: String
-}
-
-impl Config{
-    fn get_github_name(&mut self) -> &String {  &self.username }
-    fn get_token(&mut self) -> &String { &self.token }
-
-    pub fn set_username(&mut self, x: String) { self.username = x; }
-    pub fn set_token(&mut self, x: String) { self.token = x; }
-}*/

@@ -3,11 +3,6 @@ use self::serde_json::{ Value, Error };
 
 pub struct JSON{}
 
-pub struct JSONArray{
-
-}
-
-
 impl JSON{
     pub fn new()-> JSON{
         JSON{}

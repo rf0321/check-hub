@@ -1,4 +1,6 @@
 # Check-hub
+![LICENCE](https://img.shields.io/packagist/l/doctrine/orm.svg)
+
 Github check user information CLI tool implemented in Rust Lang
 ![peek 2018-03-09 20-56](https://user-images.githubusercontent.com/24353841/37239141-4c88fa30-2479-11e8-8e21-4d806b0d03c0.gif)
 # Configration

@@ -20,10 +20,10 @@ impl Checkhub{
         let tool = App::new("checkhub")
         .version("0.0.1")
         .author("Itinose <dhelitus@gmail.com>")
-        .about("CLI tool which can check github user infomations")
+        .about("CLI tool which can check github user informations")
         .usage("./check-hub [INFO NAME]")
         .arg(Arg::with_name("INFO NAME")
-        .help("GitHub user infomations(current version supporting)
+        .help("GitHub user informations(current version supporting)
         - name 
         - login
         - bio 

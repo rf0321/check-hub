@@ -2,12 +2,17 @@
 Github check user information CLI tool implemented in Rust Lang
 ![peek 2018-03-09 20-56](https://user-images.githubusercontent.com/24353841/37239141-4c88fa30-2479-11e8-8e21-4d806b0d03c0.gif)
 # Configration
-Please edit value of ```src/github_api.rs```
+1.Clone this repository and move to this directory
+```
+git clone git@github.com:ItinoseSan/check-hub.git
+cd check-hub
+```
+2.Please edit value of ```src/github_api.rs```
 ```rust
 const GITHUB_USER_NAME:&str = "Your user name";
 const API_TOKEN:&str = "Your token";
 ```
-Build project 
+3.Build project 
 ```
 cargo build
 ```

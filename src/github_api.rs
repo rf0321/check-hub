@@ -17,7 +17,7 @@ impl GithubAPI{
         );
         return self.convert_to_statictype(url);
     }
-     pub fn profile(&self)-> &str{
+    pub fn profile(&self)-> &str{
         let username = GITHUB_USER_NAME;
         let token = API_TOKEN; 
         let url = format!(

@@ -11,7 +11,7 @@ cd check-hub
 ```
 2.Please edit value of ```src/github_api.rs```
 ```rust
-const GITHUB_USER_NAME:&str = "Your user name";
+const GITHUB_USER_NAME:&str = "Your github user name";
 const API_TOKEN:&str = "Your token";
 ```
 3.Build project 

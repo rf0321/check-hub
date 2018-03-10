@@ -2,7 +2,7 @@
 ![LICENCE](https://img.shields.io/packagist/l/doctrine/orm.svg)
 [![Build Status](https://travis-ci.org/ItinoseSan/check-hub.svg?branch=master)](https://travis-ci.org/ItinoseSan/check-hub)
 
-Github check user information CLI tool implemented in Rust Lang
+CLI tool which can check github user information that implemented in Rust Lang
 ![peek 2018-03-09 20-56](https://user-images.githubusercontent.com/24353841/37239141-4c88fa30-2479-11e8-8e21-4d806b0d03c0.gif)
 # Configration
 1.Clone this repository and move to this directory

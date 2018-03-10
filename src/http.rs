@@ -2,11 +2,11 @@ extern crate reqwest;
 use std::io::Read;
 use std::mem;
 
-pub struct Http{}
+pub struct HttpRequest{}
 
-impl Http{
-    pub fn new() ->Http{
-        Http{}
+impl HttpRequest{
+    pub fn new() ->HttpRequest{
+        HttpRequest{}
     }
     pub fn get_request_json(&self,url: &str)-> &str{
         let mut resp = reqwest::get(url).unwrap();

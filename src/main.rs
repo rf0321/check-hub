@@ -38,9 +38,11 @@ impl Checkhub{
     fn parse_command(&self,tool: App){
         let github = GithubAPI::new();
         let client = HttpRequest::new();
+        let url = github.profile();
+        let json = client.get_request_json(url);
         let json_decoder = JSON::new();
         let maches = tool.get_matches();
-
+      
         if let Some(arg) = maches.value_of("INFO NAME"){
             if arg == "name"{
                json_decoder.name(json);

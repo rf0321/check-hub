@@ -4,7 +4,7 @@
 
 Toy CLI tool which can check github user information that implemented in Rust Lang
 ![peek 2018-03-09 20-56](https://user-images.githubusercontent.com/24353841/37239141-4c88fa30-2479-11e8-8e21-4d806b0d03c0.gif)
-# Configration
+# Configuration
 1.Clone this repository and move to this directory
 ```
 git clone git@github.com:ItinoseSan/check-hub.git

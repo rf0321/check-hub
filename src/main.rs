@@ -44,33 +44,25 @@ impl Checkhub{
         let maches = tool.get_matches();
       
         if let Some(arg) = maches.value_of("INFO NAME"){
-            if arg == "name"{
-               json_decoder.name(json);
-            }
-            else if arg == "login"{
-               json_decoder.login(json);
-            }
-            else if arg == "bio"{
-               json_decoder.bio(json);
-            }
-            else if arg == "gist-count"{
-               json_decoder.gist(json);
-            }
-            else if arg == "follow-count"{
-               json_decoder.follow_count(json);
-            }
-            else if arg =="follower-count"{
-               json_decoder.follower_count(json);
-            }
-            else if arg == "repository-count"{
-               json_decoder.repository_count(json);
-            }
-            else if arg =="location"{
-               json_decoder.location(json);
-            }
-           else{
-               println!("Undefined args of this tool :{} \nCheck  -h or --help command",arg);
-            }
+            let name :&str = "name";
+            let login :&str = "login";
+            let bio :&str = "bio";
+            let gist_count :&str = "gist-count";
+            let follow_count :&str = "follow-count";
+            let follower_count :&str = "follower-count";
+            let repository_count :&str = "repository-count";
+            let location :&str = "location";
+
+            match &arg {
+                name => json_decoder.name(json),
+                login => json_decoder.login(json),
+                bio => json_decoder.bio(json),
+                gist_count => json_decoder.gist(json),
+                follow_count => json_decoder.follow_count(json),
+                follower_count => json_decoder.follower_count(json),
+                repository_count => json_decoder.repository_count(json),
+                location => json_decoder.location(json),
+            };
         }
     }
 }

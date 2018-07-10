@@ -10,12 +10,19 @@ Toy CLI tool which can check github user information that implemented in Rust La
 git clone git@github.com:ItinoseSan/check-hub.git
 cd check-hub
 ```
-2.Please edit value of ```src/github_api.rs```
-```rust
-const GITHUB_USER_NAME:&str = "Your github user name";
-const API_TOKEN:&str = "Your token";
+2.Please touch ```apiconfig.yml```  config file  in ```target/debug```
 ```
-3.Build project 
+cd target/debug
+touch apiconfig.yml
+```
+3.Edit this yml file like a below
+
+```yaml
+name: <github login name>
+GITHUB_API_TOKEN: YOUR_GITHUB_API_TOKEN
+```
+
+4.Build project 
 ```
 cargo build
 ```

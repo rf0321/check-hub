@@ -60,6 +60,8 @@ impl Checkhub{
                 json_decoder.follower_count(json);
             }else if arg.starts_with("location"){
                 json_decoder.location(json);
+            }else{
+                println!("Invaild argument value.");
             }
         }
     }

@@ -83,16 +83,3 @@ fn test_parse_config(){
     println!("Your API token={}",str_result);
     println!("Your github login name={}",result2);
 }
-
-// this code from github usage's example
-#[test]
-fn test_parse_yaml_format() {
-    let s =
-    "foo:
-    - list1
-    - list2";
-    // Index access for map & array
-    let result = doc["foo"][0].as_str().unwrap();
-
-    println!("{}",result );
-}

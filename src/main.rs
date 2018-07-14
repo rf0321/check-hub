@@ -4,13 +4,13 @@ extern crate reqwest;
 mod github_api;
 mod http;
 mod json;
-use clap::{ App, Arg };
+use clap::{ App,SubCommand };
 use github_api::GithubAPI;
 use http::HttpRequest;
 use json::JSON;
 
 extern crate yaml_rust;
-use yaml_rust::{YamlLoader, YamlEmitter};
+use yaml_rust::YamlLoader;
 
 pub struct Checkhub{}
 
@@ -24,7 +24,6 @@ impl Checkhub{
         .author("Itinose <dhelitus@gmail.com>")
         .about("CLI tool which can check github user informations")
         .usage("./check-hub [INFO NAME]")
-        .arg(Arg::with_name("INFO NAME")
         .help("GitHub user informations(current version supporting)
         - name 
         - login
@@ -33,39 +32,34 @@ impl Checkhub{
         - follow-count
         - follower-count
         - location") 
-       .required(true)          
-    );
-    self.parse_argument(tool);      
-    }                                                    
-    fn parse_argument(&self,tool: App){
+        .subcommand(SubCommand::with_name("name"))
+        .subcommand(SubCommand::with_name("login"))
+        .subcommand(SubCommand::with_name("bio"))
+        .subcommand(SubCommand::with_name("gist-count"))
+        .subcommand(SubCommand::with_name("follow-count"))
+        .subcommand(SubCommand::with_name("follower-count"))
+        .subcommand(SubCommand::with_name("location"))        
+        .get_matches();
+
         let github = GithubAPI::new();
         let client = HttpRequest::new();
         let url = github.profile();
         let json = client.get_request_json(url);
         let json_decoder = JSON::new();
-        let maches = tool.get_matches();
-      
-        if let Some(arg) = maches.value_of("INFO NAME"){
-            if arg.starts_with("bio"){
-                json_decoder.bio(json);
-            }else if arg.starts_with("login"){
-                json_decoder.login(json);
-            }else if arg.starts_with("name"){
-                json_decoder.name(json);
-            }else if arg.starts_with("gist-count"){
-                json_decoder.gist(json);
-            }else if arg.starts_with("follow-count"){
-                json_decoder.follow_count(json);
-            }else if arg.starts_with("follower-count"){
-                json_decoder.follower_count(json);
-            }else if arg.starts_with("location"){
-                json_decoder.location(json);
-            }else{
-                println!("Invaild argument value.");
-            }
+        
+        match tool.subcommand_name(){
+            Some("name")           => { json_decoder.name(json); },
+            Some("login")          => { json_decoder.login(json); },
+            Some("bio")            => { json_decoder.bio(json); },
+            Some("gist-count")     => { json_decoder.gist_count(json); },
+            Some("follow-count")   => { json_decoder.follow_count(json); },
+            Some("follower-count") => { json_decoder.follower_count(json); },
+            Some("location") 　　　 => { json_decoder.location(json); },            
+            _ => { println!("Error: You must input subcommand. Please check --help command");} 
         }
-    }
-}
+    }    
+}        
+
 fn main(){
     let checkhub = Checkhub::new();
     checkhub.run();

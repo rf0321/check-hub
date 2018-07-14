@@ -27,7 +27,7 @@ impl JSON{
         println!("Your location is {}",parser["location"]);
         Ok(())
     }
-    pub fn gist(&self, json: &str)-> Result<(), Error>{
+    pub fn gist_count(&self, json: &str)-> Result<(), Error>{
         let parser: Value = serde_json::from_str(json)?;
         println!("Your gist count is {}",parser["public_gists"]);
         Ok(())

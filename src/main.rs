@@ -54,8 +54,8 @@ impl Checkhub{
             Some("gist-count")     => { json_decoder.gist_count(json); },
             Some("follow-count")   => { json_decoder.follow_count(json); },
             Some("follower-count") => { json_decoder.follower_count(json); },
-            Some("location") 　　　 => { json_decoder.location(json); },            
-            _ => { println!("Error: You must input subcommand. Please check --help command");} 
+            Some("location")       => { json_decoder.location(json); },            
+            _ => { println!("Error: You must input subcommand. Please check --help command");}, 
         }
     }    
 }        

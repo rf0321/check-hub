@@ -46,7 +46,7 @@ impl Checkhub{
         let url = github.profile();
         let json = client.get_request_json(url);
         let json_decoder = JSON::new();
-
+        
         match tool.subcommand_name(){
             Some("name")           => { json_decoder.name(json); },
             Some("login")          => { json_decoder.login(json); },
@@ -55,7 +55,7 @@ impl Checkhub{
             Some("follow-count")   => { json_decoder.follow_count(json); },
             Some("follower-count") => { json_decoder.follower_count(json); },
             Some("location") 　　　 => { json_decoder.location(json); },            
-            _ => { println!("Error: You must input subcommand. Please check --help command");}
+            _ => { println!("Error: You must input subcommand. Please check --help command");} 
         }
     }    
 }        

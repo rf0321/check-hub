@@ -15,10 +15,10 @@ impl HttpRequest{
         return self.cast_typeof_response(s);
     }
     fn cast_typeof_response(&self,s: String) -> &str { // String convert to static str
-        unsafe {
-            let ret = mem::transmute(&s as &str);
-            mem::forget(s);
-            ret
-        }
+       unsafe {
+           let ret = mem::transmute(&s as &str);
+           mem::forget(s);
+           ret
+       }
     }
 }

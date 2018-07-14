@@ -48,13 +48,13 @@ impl Checkhub{
         let json_decoder = JSON::new();
 
         match tool.subcommand_name(){
-            Some("name") => { json_decoder.name(json); },
-            Some("login") => { json_decoder.login(json); },
-            Some("bio") => { json_decoder.bio(json); },
-            Some("gist-count") => { json_decoder.gist_count(json); },
-            Some("follow-count") => { json_decoder.follow_count(json); },
+            Some("name")           => { json_decoder.name(json); },
+            Some("login")          => { json_decoder.login(json); },
+            Some("bio")            => { json_decoder.bio(json); },
+            Some("gist-count")     => { json_decoder.gist_count(json); },
+            Some("follow-count")   => { json_decoder.follow_count(json); },
             Some("follower-count") => { json_decoder.follower_count(json); },
-            Some("location") => { json_decoder.location(json); },            
+            Some("location") 　　　 => { json_decoder.location(json); },            
             _ => { println!("Error: You must input subcommand. Please check --help command");}
         }
     }    

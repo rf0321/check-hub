@@ -1,8 +1,7 @@
 extern crate yaml_rust;
-use yaml_rust::{YamlLoader, YamlEmitter};
+use yaml_rust::YamlLoader;
 
 use std::mem;
-use std::fs;
 use std::fs::File;
 use std::io::Read;
 

@@ -61,19 +61,19 @@ impl Checkhub{
 }        
 
 fn main(){
-    let checkhub = Checkhub::new();
-    checkhub.run();
+   let checkhub = Checkhub::new();
+   checkhub.run();
 }
 
 #[test]
 fn test_parse_config(){
-    let yaml = github_api::get_config_yamlfile("apiconfig.yml");
-    let docs = YamlLoader::load_from_str(yaml).unwrap();
-    let doc = &docs[0];
-    println!("{}",yaml);
-    let result = doc["GITHUB_API_TOKEN"].as_str().unwrap();
-    let result2 = doc["name"].as_str().unwrap();
-    let str_result:&str = result;
-    println!("Your API token={}",str_result);
-    println!("Your github login name={}",result2);
+   let yaml = github_api::get_config_yamlfile("apiconfig.yml");
+   let docs = YamlLoader::load_from_str(yaml).unwrap();
+   let doc = &docs[0];
+   println!("{}",yaml);
+   let result = doc["GITHUB_API_TOKEN"].as_str().unwrap();
+   let result2 = doc["name"].as_str().unwrap();
+   let str_result:&str = result;
+   println!("Your API token={}",str_result);
+   println!("Your github login name={}",result2);
 }

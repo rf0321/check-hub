@@ -13,11 +13,11 @@ pub fn get_config_yamlfile(filename: &str) ->&str{
     string_to_static_str(file)
 }
 fn string_to_static_str(s: String) -> &'static str { 
-    unsafe {
-        let ret = mem::transmute(&s as &str);
-        mem::forget(s);
-        ret
-    }
+   unsafe {
+       let ret = mem::transmute(&s as &str);
+       mem::forget(s);
+       ret
+   }
 }
 
 pub struct GithubAPI{}
@@ -41,10 +41,10 @@ impl GithubAPI{
         return self.convert_to_statictype(url);
     }
     fn convert_to_statictype(&self,s: String) -> &str { // String convert to static str
-        unsafe {
+       unsafe {
             let ret = mem::transmute(&s as &str);
             mem::forget(s);
             ret
-        }
+       }
     }
-}
+ } 
